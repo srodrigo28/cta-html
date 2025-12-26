@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreinaDev - Aulas Particulares v-4/title>
+    <title>TreinaDev - Aulas Particulares v-4</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -200,25 +200,15 @@
         const modal = document.getElementById('modal');
         const modalContent = document.getElementById('modal-content');
 
-        // --- LÓGICA DE MÁSCARA DE TELEFONE ---
         const inputTelefone = document.getElementById('telefone');
         
         inputTelefone.addEventListener('input', function(e) {
             let valor = e.target.value;
-            
-            // Remove tudo que não é dígito
             valor = valor.replace(/\D/g, "");
-            
-            // Aplica a formatação
-            // Coloca parênteses em volta dos dois primeiros dígitos
             valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
-            // Coloca hífen entre o quinto e o sexto dígitos
             valor = valor.replace(/(\d)(\d{4})$/, "$1-$2");
-            
-            // Atualiza o valor do input
             e.target.value = valor;
         });
-        // --------------------------------------
 
         function abrirModal() {
             modal.classList.remove('hidden');
@@ -257,7 +247,6 @@
             const dispositivoInfo = document.getElementById('info_device').value;
             const horarioClique = document.getElementById('info_time').value;
 
-            // Variável centralizada com código do país (55)
             const numeroProfessor = "5562998579084";
 
             const textoMensagem = `Olá! 👋
@@ -273,7 +262,6 @@ Gostaria de agendar minha aula grátis de *FlutterFlow*.
 *⚙️ Info Técnica:*
 💻 ${dispositivoInfo} | ⏰ ${horarioClique}`;
 
-            // Correção aqui: usando a variável numeroProfessor corretamente
             const urlWhatsApp = `https://wa.me/${numeroProfessor}?text=${encodeURIComponent(textoMensagem)}`;
             window.open(urlWhatsApp, '_blank');
         });
