@@ -1,4 +1,4 @@
-## Projeto CTA Vendas
+## Projeto CTA Vendas 2026.
 
 ## Home v1
 <img src="./preview/home-v1.png" alt="home-v1">
